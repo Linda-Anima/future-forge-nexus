@@ -1,26 +1,58 @@
 
 import React from 'react';
+import { Card, CardContent } from '@/components/ui/card';
 
 const SharkooPage = () => {
+  const services = [
+    {
+      title: "Innovation Consulting",
+      description: "Expert guidance in identifying and implementing innovative solutions using existing resources."
+    },
+    {
+      title: "Technology Integration",
+      description: "Seamless integration of cutting-edge technologies with your current systems."
+    },
+    {
+      title: "Digital Transformation",
+      description: "Complete digital overhaul of your business processes and operations."
+    }
+  ];
+
   return (
-    <div className="min-h-screen bg-white">
-      <div className="container mx-auto px-4 py-20">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-blue-700">Sharkoo</h2>
-          
-          <div className="mb-10">
-            <h3 className="text-xl font-semibold mb-3">Vision</h3>
-            <p className="text-gray-700 text-lg">
-              To drive innovation by harnessing what we have today to create what the world has yet to see.
-            </p>
-          </div>
-          
-          <div className="mb-10">
-            <h3 className="text-xl font-semibold mb-3">Mission</h3>
-            <p className="text-gray-700 text-lg">
-              At Elevate IO, we empower communities and industries through innovative technology solutions, 
-              transforming present resources into groundbreaking advancements that shape a better, smarter future.
-            </p>
+    <div className="min-h-screen pt-20 bg-gradient-to-b from-blue-50 to-white">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Sharkoo Logo Card */}
+          <Card className="p-8 shadow-lg hover:shadow-xl transition-shadow bg-white">
+            <CardContent className="space-y-6">
+              <img 
+                src="/lovable-uploads/37cd9c8e-7a7c-4b5b-97ac-a319c5e362b1.png" 
+                alt="Sharkoo Logo" 
+                className="w-64 h-64 mx-auto"
+              />
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-blue-700 mb-4">The Sharkoo Project</h3>
+                <p className="text-gray-600">
+                  Sharkoo represents our commitment to revolutionizing educational technology. 
+                  It's a platform designed to make learning more engaging, interactive, and accessible 
+                  for students worldwide. With its friendly shark mascot and intuitive interface, 
+                  Sharkoo transforms how students learn and collaborate.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Services List */}
+          <div className="space-y-8">
+            <h2 className="text-3xl font-bold text-blue-700 mb-8">Our Services</h2>
+            {services.map((service, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow bg-white">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold mb-2 text-blue-600">{service.title}</h3>
+                  <p className="text-gray-600">{service.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </div>
