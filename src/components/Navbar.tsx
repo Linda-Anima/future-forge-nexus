@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,10 +19,10 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#hero' },
-    { name: 'About', href: '#about' },
-    { name: 'Solutions', href: '#solutions' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'Sharkoo', href: '/sharkoo' },
+    { name: 'Services', href: '/services' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -29,32 +30,32 @@ const Navbar: React.FC = () => {
       className={cn(
         'fixed top-0 left-0 w-full z-50 transition-all duration-300',
         isScrolled 
-          ? 'bg-white/80 backdrop-blur-md shadow-sm py-2' 
+          ? 'bg-white shadow-sm py-2' 
           : 'bg-transparent py-4'
       )}
     >
       <div className="container mx-auto flex justify-between items-center px-4 md:px-6">
-        <a href="#" className="flex items-center space-x-2">
-          <span className="font-montserrat font-bold text-xl text-elevate-blue">
-            Elevate<span className="text-elevate-purple">IO</span>
+        <Link to="/" className="flex items-center space-x-2">
+          <span className="font-montserrat font-bold text-xl text-blue-700">
+            Elevate<span className="text-blue-500">IO</span>
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.name}
-              href={item.href}
-              className="font-medium text-gray-700 hover:text-elevate-purple transition-colors"
+              to={item.href}
+              className="font-medium text-gray-700 hover:text-blue-600 transition-colors"
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </nav>
 
         <div className="hidden md:block">
-          <Button className="bg-elevate-purple hover:bg-elevate-purple/90 text-white">
+          <Button className="bg-blue-700 hover:bg-blue-600 text-white">
             Get Started
           </Button>
         </div>
@@ -73,16 +74,16 @@ const Navbar: React.FC = () => {
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-md py-4 px-6 flex flex-col space-y-4 animate-fade-in">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.name}
-              href={item.href}
-              className="font-medium text-gray-700 hover:text-elevate-purple transition-colors"
+              to={item.href}
+              className="font-medium text-gray-700 hover:text-blue-600 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
-          <Button className="bg-elevate-purple hover:bg-elevate-purple/90 text-white w-full">
+          <Button className="bg-blue-700 hover:bg-blue-600 text-white w-full">
             Get Started
           </Button>
         </div>
