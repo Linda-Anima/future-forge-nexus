@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -69,7 +70,8 @@ export default {
         elevate: {
           blue: '#0052CC',
           lightBlue: '#2684FF',
-          cyan: '#00C7E6'
+          cyan: '#00C7E6',
+          purple: '#8B5CF6' // Added the missing elevate-purple color
         }
       },
       borderRadius: {

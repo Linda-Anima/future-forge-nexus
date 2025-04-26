@@ -8,7 +8,7 @@ const HeroSection: React.FC = () => {
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden mesh-bg">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/5 w-64 h-64 bg-elevate-purple/5 rounded-full filter blur-3xl animate-pulse-light"></div>
+        <div className="absolute top-1/4 left-1/5 w-64 h-64 bg-blue-500/5 rounded-full filter blur-3xl animate-pulse-light"></div>
         <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-elevate-cyan/5 rounded-full filter blur-3xl animate-pulse-light" style={{ animationDelay: '1s' }}></div>
         <div className="absolute top-1/2 right-1/3 w-72 h-72 bg-elevate-blue/5 rounded-full filter blur-3xl animate-pulse-light" style={{ animationDelay: '2s' }}></div>
       </div>
@@ -16,7 +16,7 @@ const HeroSection: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col items-center text-center">
           <h1 className="opacity-0 animate-fade-in text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6 max-w-4xl">
-            Building the <span className="gradient-text">Unseen Future</span>
+            Building the <span className="bg-gradient-to-r from-elevate-blue via-elevate-purple to-elevate-cyan bg-clip-text text-transparent">Unseen Future</span>
           </h1>
           
           <p className="opacity-0 animate-fade-in-delay-1 text-lg md:text-xl text-gray-700 max-w-2xl mb-10">
